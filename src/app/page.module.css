@@ -1,0 +1,234 @@
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 85vh;
+  min-height: 500px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--background);
+  overflow: hidden;
+}
+
+.heroVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.35); /* Elegant overlay to make white text pop */
+  z-index: 1;
+}
+
+.heroContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 10;
+  max-width: 800px;
+  padding: var(--spacing-4);
+  color: #fff;
+  animation: fadeInSlideUp 1s ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroLogo {
+  height: 180px; /* Refined optimal logo size */
+  width: auto;
+  max-width: 90vw;
+  object-fit: contain;
+  margin-bottom: var(--spacing-1); /* Decreased space between logo and title */
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+}
+
+.heroTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem); /* Substantially decreased */
+  font-weight: 400;
+  margin-bottom: var(--spacing-3);
+  color: #fff;
+  letter-spacing: 0.02em; /* Added tracking for elegant smaller text */
+  text-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+
+.heroSubtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  margin-bottom: var(--spacing-3); /* Tightened gap between text and button */
+  font-weight: 300;
+  opacity: 0.9;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+/* Sections */
+.section {
+  padding: var(--spacing-12) 0;
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: var(--secondary);
+  margin: var(--spacing-3) auto 0;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-4);
+}
+
+/* Categories Setup */
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-4);
+}
+
+.categoryCard {
+  position: relative;
+  height: 350px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-slow);
+}
+
+.categoryCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.1));
+  transition: opacity var(--transition-normal);
+  z-index: 1;
+}
+
+.categoryCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.categoryImg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.categoryCard:hover .categoryImg {
+  transform: scale(1.1);
+}
+
+.categoryTitle {
+  position: relative;
+  z-index: 2;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  letter-spacing: 0.05em;
+  color: #fff;
+}
+
+/* Promotional Banner */
+.promoBanner {
+  position: relative;
+  width: 100%;
+  padding: var(--spacing-8) var(--spacing-4);
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  margin: var(--spacing-6) 0;
+}
+
+.promoBg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0.35; /* Faded backing */
+  z-index: 0;
+}
+
+.promoContent {
+  position: relative;
+  z-index: 10;
+  color: #fff;
+  max-width: 800px;
+}
+
+.promoTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  font-weight: 600;
+  margin-bottom: var(--spacing-2);
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 16px rgba(0,0,0,0.6);
+  color: var(--secondary); /* Gorgeous golden taupe pop */
+  line-height: 1.1;
+}
+
+.promoSubtitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 300;
+  margin-bottom: var(--spacing-5);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 600px) {
+  .hero {
+    height: 100vh;
+    min-height: 650px;
+  }
+  .heroContent {
+    width: 90%;
+    top: 50%;
+  }
+  .heroLogo {
+    height: 70px;
+    margin-bottom: 24px;
+  }
+  .heroTitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .heroSubtitle {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+  }
+}

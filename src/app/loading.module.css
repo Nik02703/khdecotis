@@ -1,0 +1,23 @@
+.loadingWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.heroSkeleton {
+  height: 60vh;
+  min-height: 400px;
+  width: 100%;
+  border-radius: var(--radius-lg);
+}
+
+.gridSkeleton {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-4);
+}
+
+.cardSkeleton {
+  height: 350px;
+  border-radius: var(--radius-md);
+}

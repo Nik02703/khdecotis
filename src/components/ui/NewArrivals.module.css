@@ -1,0 +1,126 @@
+.section {
+  padding: 6rem 0;
+  background-color: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.newBadge {
+  font-family: 'Outfit', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  font-style: italic;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #ea580c;
+  text-shadow: 4px 4px 0px rgba(234,88,12,0.15);
+  letter-spacing: 2px;
+  transform: rotate(-5deg);
+  animation: badgeFloat 3s ease-in-out infinite alternate;
+}
+
+@keyframes badgeFloat {
+  0% { transform: rotate(-5deg) scale(1); }
+  100% { transform: rotate(-2deg) scale(1.05); }
+}
+
+.titleText {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* Sliding Toggle Styles mapping to User Screenshot */
+.toggleWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.toggleTrack {
+  position: relative;
+  display: flex;
+  background: #e5e5e5;
+  border-radius: 40px;
+  padding: 4px;
+  width: 600px;
+  height: 56px;
+}
+
+.toggleThumb {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  height: calc(100% - 8px);
+  background: #1a1a1a;
+  border-radius: 36px;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.toggleBtn {
+  flex: 1;
+  position: relative;
+  z-index: 10;
+  background: transparent;
+  border: none;
+  border-radius: 36px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #525252;
+  cursor: pointer;
+  transition: color 0.4s ease;
+}
+
+.activeBtn {
+  color: #ffffff;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .productGrid {
+    grid-template-columns: 1fr;
+  }
+  .toggleTrack {
+    width: 100%;
+  }
+  .toggleBtn {
+    font-size: 0.85rem;
+  }
+}

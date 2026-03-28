@@ -1,0 +1,231 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  width: 900px;
+  max-width: 95vw;
+  max-height: 90vh;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  padding: 40px;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+  z-index: 10;
+}
+
+.modalLayout {
+  display: flex;
+  gap: 60px;
+  height: 100%;
+}
+
+.leftCol, .rightCol {
+  flex: 1;
+}
+
+.rightCol {
+  border-left: 1px solid #ebebeb;
+  padding-left: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  color: #111;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputGroup label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #111;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.required {
+  font-weight: 400;
+  color: #777;
+  font-size: 0.75rem;
+}
+
+.inputGroup input {
+  padding: 12px 16px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.inputGroup input:focus {
+  border-color: #111;
+}
+
+.passwordWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.passwordWrapper input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.eyeIcon {
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+  color: #999;
+}
+
+.resetLink {
+  font-size: 0.8rem;
+  color: #111;
+  text-decoration: underline;
+}
+
+.blackBtn {
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 40px;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: background 0.2s;
+  width: 100%;
+}
+
+.blackBtn:hover {
+  background: #333;
+}
+
+.divider {
+  text-align: center;
+  position: relative;
+  margin: 10px 0;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.socialBtn {
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.socialBtn:hover {
+  background: #f5f5f5;
+}
+
+.terms {
+  font-size: 0.75rem;
+  color: #555;
+  text-align: left;
+  line-height: 1.4;
+  margin-top: 10px;
+}
+
+.terms a {
+  text-decoration: underline;
+  color: #111;
+}
+
+.error {
+  color: #d32f2f;
+  background: #ffebee;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.perksTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #111;
+}
+
+.perksList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-grow: 1;
+  margin-bottom: 2rem;
+}
+
+.perksList li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.switchText {
+  font-size: 0.9rem;
+  color: #333;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.textBtn {
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}

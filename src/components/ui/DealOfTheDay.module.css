@@ -1,0 +1,299 @@
+.section {
+  padding: var(--spacing-6) var(--spacing-6);
+  display: flex;
+  gap: var(--spacing-4);
+  background: #e0f2fe;
+  border-radius: 32px;
+  max-width: 1440px;
+  width: 96%;
+  margin: var(--spacing-8) auto;
+}
+
+@media (max-width: 900px) {
+  .section {
+    flex-direction: column;
+    padding: var(--spacing-4);
+  }
+  .leftSidebar {
+    width: 100%;
+    padding: var(--spacing-4);
+  }
+}
+
+.leftSidebar {
+  width: 320px;
+  background-color: transparent;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-6);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.rays {
+  position: absolute;
+  top: -50%; left: -50%; width: 200%; height: 200%;
+  background: repeating-conic-gradient(
+    from 0deg,
+    transparent 0deg 15deg,
+    rgba(255, 255, 255, 0.4) 15deg 30deg
+  );
+  animation: spin 60s linear infinite;
+  z-index: 0;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.sidebarContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titleWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: var(--spacing-6);
+}
+
+.wordDeal {
+  font-family: 'Outfit', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1;
+  letter-spacing: -1.5px;
+}
+
+.wordOf {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 1.6rem;
+  color: #1a1a1a;
+  line-height: 1;
+  margin: 4px 0;
+}
+
+.wordDay {
+  font-family: 'Outfit', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1;
+  letter-spacing: -1.5px;
+}
+
+.endsInText {
+  color: #92400e;
+  font-weight: 500;
+  margin-bottom: var(--spacing-2);
+  font-size: 1.15rem;
+  font-family: 'Outfit', sans-serif;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+}
+
+.timeBlock {
+  background: #fff;
+  color: #2c2a29;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.timeLabel {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.colon {
+  font-weight: 700;
+  color: #92400e;
+}
+
+.carouselWrapper {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.carouselTrack {
+  display: flex;
+  gap: var(--spacing-4);
+  overflow-x: auto;
+  padding-bottom: var(--spacing-2);
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.carouselTrack::-webkit-scrollbar {
+  display: none;
+}
+
+.dealCard {
+  min-width: 250px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.dealCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.cardImageWrapper {
+  position: relative;
+  height: 200px;
+  background: #f7f7f7;
+}
+
+.cardImg {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+.dealTag {
+  position: absolute;
+  top: 10px; left: 0;
+  background: #f97316; /* Vibrant Orange */
+  color: #fff;
+  font-size: 0.75rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 0 4px 4px 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.heartBtn {
+  position: absolute;
+  top: 10px; right: 10px;
+  background: #fff;
+  border: none;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.heartBtn:hover {
+  color: #ef4444;
+}
+
+.cardBody {
+  padding: var(--spacing-3);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.productTitle {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-main);
+  line-height: 1.3;
+  margin-bottom: 2px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.productCategory {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-2);
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: var(--spacing-2);
+}
+
+.currentPrice {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.oldPrice {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.discountBadge {
+  background: #0d9488; /* Teal */
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.limitedOffer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fdf2f8;
+  color: #be185d; /* Raspberry */
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 4px;
+  width: max-content;
+  margin-bottom: var(--spacing-3);
+}
+
+.addToCartBtn {
+  margin-top: auto;
+  background: transparent;
+  border: 1px solid #1e293b;
+  color: #1e293b;
+  font-family: inherit;
+  font-weight: 600;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.addToCartBtn:hover {
+  background: #1e293b;
+  color: #fff;
+}

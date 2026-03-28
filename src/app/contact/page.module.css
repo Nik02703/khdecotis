@@ -1,0 +1,122 @@
+/* Contact Page Specific Layout */
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-6);
+  max-width: 1000px;
+  margin: var(--spacing-4) auto 0 auto;
+}
+
+@media (max-width: 768px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.infoCard {
+  background: var(--surface);
+  padding: var(--spacing-5);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+}
+
+.infoTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: var(--spacing-3);
+  letter-spacing: 0.02em;
+}
+
+.infoItem {
+  margin-bottom: var(--spacing-3);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-main);
+}
+
+.infoItem strong {
+  display: inline-block;
+  margin-bottom: 4px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.infoItem a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.infoItem a:hover {
+  text-decoration: underline;
+  color: var(--primary);
+}
+
+.mapContainer {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+}
+
+/* Existing form styles translated */
+.formWrapper {
+  background: var(--surface);
+  padding: var(--spacing-6);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+}
+
+.formGroup {
+  margin-bottom: var(--spacing-4);
+}
+
+.label {
+  display: block;
+  margin-bottom: var(--spacing-1);
+  font-weight: 500;
+  color: var(--primary);
+  font-size: 0.95rem;
+}
+
+.input, .textarea {
+  width: 100%;
+  padding: var(--spacing-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--background);
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text-main);
+  transition: all var(--transition-fast);
+}
+
+.input:focus, .textarea:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 2px rgba(187, 162, 136, 0.2); /* Matching secondary color */
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.pageBg {
+  background-color: #f4f0ea; /* Smooth luxury sand background */
+  width: 100%;
+  min-height: 100vh;
+}

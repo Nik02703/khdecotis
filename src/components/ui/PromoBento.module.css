@@ -1,0 +1,116 @@
+.promoSection {
+  padding: var(--spacing-6) 0;
+}
+
+.bentoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 1.1fr;
+  grid-auto-rows: 260px;
+  gap: var(--spacing-4);
+  width: 100%;
+}
+
+.bentoCard {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--spacing-5);
+  text-decoration: none;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.bentoCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.bentoCard:hover .bentoImage {
+  transform: scale(1.05);
+}
+
+.bentoImage {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: transform var(--transition-slow);
+}
+
+/* Enhances readability over busy background images */
+.bentoOverlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 40%, transparent 100%);
+  z-index: 1;
+}
+
+.bentoContent {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.bentoTitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--spacing-1);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.bentoDiscount {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 500;
+  margin-bottom: var(--spacing-3);
+  line-height: 1.1;
+  color: #fff;
+}
+
+.bentoBtn {
+  background-color: var(--primary); /* Deep charcoal mapping screenshot */
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px; /* Slightly rounded edges mapping screenshot */
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  width: max-content;
+  transition: background-color var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.bentoCard:hover .bentoBtn {
+  background-color: var(--secondary);
+}
+
+.tallCard {
+  grid-row: span 2;
+}
+
+@media (max-width: 1024px) {
+  .bentoGrid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-auto-rows: 240px;
+  }
+  .tallCard { grid-row: span 2; }
+}
+
+@media (max-width: 768px) {
+  .bentoGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-auto-rows: 300px;
+  }
+  .tallCard { grid-row: span 1; }
+}
